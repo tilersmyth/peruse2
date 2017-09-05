@@ -1,0 +1,11 @@
+@import "../../../styles/var";
+
+:host {
+  z-index: $z-index__main-toolbar;
+}
+
+a.nav_link{
+  border-radius: 0;
+  min-width: 50px;
+  height: 100%;
+}

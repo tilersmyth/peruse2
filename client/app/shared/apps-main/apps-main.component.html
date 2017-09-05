@@ -1,0 +1,11 @@
+<md-sidenav-container class="admin-container">
+  
+  <div class="content-container" [class.no-sidenav]="sidenavPage" fxLayout="column">
+    <ms-toolbar [sidenav]="sidenav"></ms-toolbar>
+    <div class="main-container" #scrollContainer>
+      <router-outlet (activate)="onActivate($event, scrollContainer)"></router-outlet>
+    </div>
+  </div>
+
+</md-sidenav-container>
+  

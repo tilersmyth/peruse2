@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ToastComponent } from '../shared/toast/toast.component';
 import { AuthService } from '../services/auth.service';
 import { UserService } from '../services/user.service';
 
 @Component({
-  selector: 'app-admin',
+  selector: 'ms-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss']
 })
@@ -15,7 +14,6 @@ export class AdminComponent implements OnInit {
   isLoading = true;
 
   constructor(public auth: AuthService,
-              public toast: ToastComponent,
               private userService: UserService) { }
 
   ngOnInit() {
@@ -32,7 +30,7 @@ export class AdminComponent implements OnInit {
 
   deleteUser(user) {
     this.userService.deleteUser(user).subscribe(
-      data => this.toast.setMessage('user deleted successfully.', 'success'),
+     // data => this.toast.setMessage('user deleted successfully.', 'success'),
       error => console.log(error),
       () => this.getUsers()
     );

@@ -1,14 +1,34 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
-  <title>MEAN project with Angular</title>
+  <title>Peruse local</title>
   <base href="/">
 
+  <!-- Styles required for the loading screen -->
+  <link rel="stylesheet" href="/assets/css/initial.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+<script>
+  (function(window) {
+    if (window.location !== window.top.location) {
+      window.top.location = window.location;
+    }
+  })(this);
+</script>
 <body>
-  <app-root>Loading...</app-root>
+  <app-root>
+    <div class="background">
+      <div class="wrapper">
+        <div class="ball-scale-multiple">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </app-root>
 </body>
 </html>

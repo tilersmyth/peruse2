@@ -1,0 +1,13 @@
+<md-card class="widget" (click)="openApp(appDetail._id)" [ngClass]="hover" (mouseover)="widgetHover($event)" (mouseout)="widgetHover($event)">
+  <md-card-title fxLayout="row" fxLayoutAlign="start center">
+    <span class="name">{{appDetail.title}}</span>
+  </md-card-title>
+
+  <md-card-content>
+    {{appDetail.content}}<
+  </md-card-content>
+
+  <div class="footer">
+    <md-divider></md-divider>
+  </div>
+</md-card>

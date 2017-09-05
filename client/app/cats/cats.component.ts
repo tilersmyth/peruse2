@@ -3,10 +3,9 @@ import { Http } from '@angular/http';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 import { CatService } from '../services/cat.service';
-import { ToastComponent } from '../shared/toast/toast.component';
 
 @Component({
-  selector: 'app-cats',
+  selector: 'ms-cats',
   templateUrl: './cats.component.html',
   styleUrls: ['./cats.component.scss']
 })
@@ -24,8 +23,7 @@ export class CatsComponent implements OnInit {
 
   constructor(private catService: CatService,
               private formBuilder: FormBuilder,
-              private http: Http,
-              public toast: ToastComponent) { }
+              private http: Http) { }
 
   ngOnInit() {
     this.getCats();
@@ -50,7 +48,7 @@ export class CatsComponent implements OnInit {
         const newCat = res.json();
         this.cats.push(newCat);
         this.addCatForm.reset();
-        this.toast.setMessage('item added successfully.', 'success');
+       // this.toast.setMessage('item added successfully.', 'success');
       },
       error => console.log(error)
     );
@@ -64,7 +62,7 @@ export class CatsComponent implements OnInit {
   cancelEditing() {
     this.isEditing = false;
     this.cat = {};
-    this.toast.setMessage('item editing cancelled.', 'warning');
+    //this.toast.setMessage('item editing cancelled.', 'warning');
     // reload the cats to reset the editing
     this.getCats();
   }
@@ -74,7 +72,7 @@ export class CatsComponent implements OnInit {
       res => {
         this.isEditing = false;
         this.cat = cat;
-        this.toast.setMessage('item edited successfully.', 'success');
+       // this.toast.setMessage('item edited successfully.', 'success');
       },
       error => console.log(error)
     );
@@ -86,7 +84,7 @@ export class CatsComponent implements OnInit {
         res => {
           const pos = this.cats.map(elem => elem._id).indexOf(cat._id);
           this.cats.splice(pos, 1);
-          this.toast.setMessage('item deleted successfully.', 'success');
+         // this.toast.setMessage('item deleted successfully.', 'success');
         },
         error => console.log(error)
       );

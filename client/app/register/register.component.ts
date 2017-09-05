@@ -2,10 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { UserService } from '../services/user.service';
-import { ToastComponent } from '../shared/toast/toast.component';
 
 @Component({
-  selector: 'app-register',
+  selector: 'ms-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
@@ -26,7 +25,6 @@ export class RegisterComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private router: Router,
-              public toast: ToastComponent,
               private userService: UserService) { }
 
   ngOnInit() {
@@ -51,10 +49,10 @@ export class RegisterComponent implements OnInit {
   register() {
     this.userService.register(this.registerForm.value).subscribe(
       res => {
-        this.toast.setMessage('you successfully registered!', 'success');
+        //this.toast.setMessage('you successfully registered!', 'success');
         this.router.navigate(['/login']);
       },
-      error => this.toast.setMessage('email already exists', 'danger')
+      //error => this.toast.setMessage('email already exists', 'danger')
     );
   }
 }

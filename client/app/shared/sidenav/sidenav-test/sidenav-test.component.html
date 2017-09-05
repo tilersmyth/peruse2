@@ -1,0 +1,7 @@
+<md-list-item class="sidenav-anchor">
+  <md-slide-toggle [checked]="checked" (change)="appState($event)">
+      <span class="sidenav-item-name fade-in-on-icon-sidenav" [ngClass]="{ 'selected': checked }">
+        View<span *ngIf="checked">ing</span> test app
+     </span>
+  </md-slide-toggle>
+</md-list-item>

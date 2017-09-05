@@ -1,0 +1,36 @@
+<div class="main-toolbar mat-elevation-z2">
+  <div *ngIf="app.isApp" fxLayout="row" fxLayoutAlign="start center" fxHide="false" fxHide.gt-sm>
+    <button (click)="sidenav.open()" md-icon-button>
+      <md-icon>menu</md-icon>
+    </button>
+  </div>
+
+  <a [routerLink]="['/apps']" fxLayout="row"  *ngIf="!app.isApp">
+    <span style="width: 22px; text-align: center; margin-left: -3px;" fxFlexAlign="center"><img src="assets/img/icon.png" style="width: 25px; vertical-align: text-top;"></span>
+    <img [fxHide]="true" [fxHide.gt-sm]="false" style="height: 35px; margin-left: 24px; margin-bottom: -5px;" src="assets/img/logo-dark.png" fxFlexAlign="center" class="fade-in-on-icon-sidenav">
+  </a>
+  
+  <ms-breadcrumbs *ngIf="showBreadcrumbs" [fxHide]="true" [fxHide.gt-sm]="false"></ms-breadcrumbs>
+
+  <div class="" *ngIf="app.isApp">
+    <ms-toolbar-application></ms-toolbar-application>
+  </div>
+
+  <span fxFlex></span>
+
+  <div class="" *ngIf="app.isApp">
+    <a class="nav_link" fxLayout="row" fxLayoutAlign="start center" md-button [routerLink]="['/apps']">
+      <md-icon>apps</md-icon>
+    </a>
+  </div>
+
+  <button *ngIf="app.isApp" [fxHide]="true" [fxHide.gt-sm]="false" md-button class="fullscreen-toggle" (click)="toggleFullscreen()">
+    <md-icon *ngIf="!isFullscreen">fullscreen</md-icon>
+    <md-icon *ngIf="isFullscreen">fullscreen_exit</md-icon>
+  </button>
+  
+  <div class="user-button-container">
+    <ms-toolbar-user-button></ms-toolbar-user-button>
+  </div>
+
+</div>

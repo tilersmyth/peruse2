@@ -17,16 +17,14 @@
       "test": "test.ts",
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
+      "prefix": "ms",
       "styles": [
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "../node_modules/font-awesome/css/font-awesome.min.css",
+        "../node_modules/normalize.css/normalize.css",
         "styles.scss"
       ],
       "scripts": [
-        "../node_modules/jquery/dist/jquery.min.js",
-        "../node_modules/tether/dist/js/tether.min.js",
-        "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+        "../node_modules/hammerjs/hammer.js",
+        "../node_modules/css-element-queries/src/ResizeSensor.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

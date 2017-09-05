@@ -1,0 +1,3 @@
+<div fxLayout="row" fxLayout.xs="column" fxLayoutWrap="wrap" [sortablejs]="dummyItems" [sortablejsOptions]="groupOptions">
+  <ms-app-list-widget class="drag-handle" fxFlex.gt-xs="50%" [fxFlex.gt-md]="regularDistribution" *ngFor="let item of dummyItems" [appDetail]=item></ms-app-list-widget>
+</div>
